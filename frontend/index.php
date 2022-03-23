@@ -2,19 +2,17 @@
 const url = 'http://localhost:3080/enviar-mensagem?';
 $retorno = '';
 
-if (isset($_POST['client'])) {
-    echo $_POST['client'];
-    $mensagemPost = array('mensagem' => $_POST['client']);
+    if (isset($_POST['client'])) {
+        $mensagemPost = array('mensagem' => $_POST['client']);
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, url.http_build_query($mensagemPost));
-    curl_setopt($ch, CURLOPT_HTTPGET, true);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $json = curl_exec($ch);
-    $retorno = json_decode($json, true);
-    curl_close($ch);
-
-}
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, url.http_build_query($mensagemPost));
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $json = curl_exec($ch);
+        curl_close($ch);
+        $retorno = json_decode($json, true);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +34,7 @@ if (isset($_POST['client'])) {
 
             <div class="mensagem">
                 <pre><?
-                    if($retorno != ''){
-                        $retorno;
-                    }
+                        echo $retorno;
                     ?></pre>
             </div>
 

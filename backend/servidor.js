@@ -12,11 +12,12 @@ app.use(bodyParser.json());
 
 app.get('/enviar-mensagem', async (req, res) => {
     console.log(req.query.mensagem);
+    if (req.query.mensagem == 'teste') {
+        res.json('teste ok!');
+    } else {
+        res.json('teste tambem ok');
+    }
 
-
-});
-
-app.post('/executar-post', async (req, res) => {
 
 });
 
