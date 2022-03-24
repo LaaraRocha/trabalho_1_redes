@@ -1,0 +1,30 @@
+.msgcliente {
+    background-color:#CCC;
+    max-width:250px;
+    height: 20%;
+    padding:16px;
+    margin-left:10px;
+    top: 2%;
+    font-size: 18px;
+}
+
+.msg {
+    position: absolute;
+    left: 320px;
+    top: 5%;
+    height: 60px;
+    width: 80px;
+    font-size: 18px;
+}
+
+.serv {
+    background-color:#CCC;
+    width: 200px;
+    height: 20%;
+    padding:16px;
+    margin-left:10%;
+    position: absolute;
+    left: 20%;
+    top: 2%;
+    font-size: 18px;
+}
