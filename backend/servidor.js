@@ -17,8 +17,6 @@ app.get('/enviar-mensagem', async (req, res) => {
     } else {
         res.json('teste tambem ok');
     }
-
-
 });
 
 app.listen(port, () => {

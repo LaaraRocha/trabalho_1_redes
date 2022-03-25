@@ -9,9 +9,11 @@ $retorno = '';
         curl_setopt($ch, CURLOPT_URL, url.http_build_query($mensagemPost));
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $json = curl_exec($ch);
+        //enable headers
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        $retorno = curl_exec($ch);
+
         curl_close($ch);
-        $retorno = json_decode($json, true);
     }
 ?>
 
@@ -39,16 +41,22 @@ $retorno = '';
 
             <fieldset class="msg">
             <div class="mensagem">
-                <pre><?
-                        echo $retorno;
-                    ?></pre>
+                <pre>
+                    <?php
+                        $tmp = explode("\n",$retorno);
+                        echo $tmp[11]
+                    ?>
+                </pre>
             </div>
             </fieldset>
 
             <fieldset class="serv">
             <div class="servidor">
-                <p>Resposta do Server</p>
-                <pre></pre>
+                <pre>
+                    <?php
+                        var_dump($retorno);;
+                    ?>
+                </pre>
             </div>
             </fieldset>
         </form>
