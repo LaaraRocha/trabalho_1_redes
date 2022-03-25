@@ -1,4 +1,6 @@
 # trabalho_1_redes
+Alunos: Laara Fernanda da Rocha e Emanuel Fleisner
+
 Pré-condições:
 <br>
 1. Utilizar PHP Storm ou VSCode
